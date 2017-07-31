@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PouchDB test</title>
+	<script src="https://unpkg.com/pouchdb@6.0.4/dist/pouchdb.min.js">
+	</script>
+	<script>
+
+//Creating the database object from remote couchDB database
+//I already have a database in couchDB called 'my_database'
+var db = new PouchDB('http://127.0.0.1:5984/my_database', {
+	auth:{
+		username: 'awasum',
+		password: 'password'
+	}
+});
+
+//deleting database
+db.destroy(function (err, response) {
+	if (err) {
+		return console.log(err);
+	} else {
+		console.log("Database Deleted");
+	}
+});
+
+
+
+</script>
+
+</head>
+<body>
+
+	<h1>Check the browser console to verify Database creation with pouchDB or CouchDB</h1>
+
+	<ul>
+		<li>Make sure you have installed CouchDB and its running on localhost</li>
+	</ul>
+
+</body>
+</html>

@@ -9,11 +9,22 @@
 	//Creating the database object
 	var db = new PouchDB('my_database');
 	console.log ("Database created Successfully.");
+
+	//Database information
+	db.info(function(err, info) {
+		if (err) {
+			return console.log(err);
+		} else {
+			console.log(info);
+		}
+	});
 	
 </script>
 
 </head>
 <body>
+
+<h1>Check the browser console to verify Database creation with pouchDB</h1>
 
 </body>
 </html>
